@@ -1,0 +1,14 @@
+{
+  "installCommand": "cd backend && npm ci && cd ../client && npm ci",
+  "buildCommand": "cd client && npm run build",
+  "outputDirectory": "client/dist",
+  "rewrites": [
+    { "source": "/customers/:path*", "destination": "/api" },
+    { "source": "/customers", "destination": "/api" }
+  ],
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": "backend/database.json"
+    }
+  }
+}
