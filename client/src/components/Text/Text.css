@@ -1,0 +1,9 @@
+.text {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.text--muted {
+  color: var(--color-muted);
+}

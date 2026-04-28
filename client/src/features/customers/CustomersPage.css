@@ -1,0 +1,72 @@
+/* Same visual language as the top navbar: blue bar, navy edge, light title */
+.customers-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 0.65rem 1.25rem;
+  background: var(--color-blue);
+  border: 1px solid var(--color-navy);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-nav);
+}
+
+.customers-toolbar__title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+
+/* Primary (solid blue) on blue toolbar has poor contrast — reinforce CTA on this surface */
+.customers-toolbar .btn--primary {
+  color: var(--color-navy);
+  background: #fff;
+  border-color: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.12);
+}
+
+.customers-toolbar .btn--primary:hover:not(:disabled) {
+  color: #fff;
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.customers-page__table {
+  scroll-margin-top: 4.75rem;
+}
+
+.customers-page > .alert {
+  margin-bottom: 1rem;
+}
+
+.dialog__body .alert {
+  margin-bottom: 1rem;
+}
+
+.customers-page__delete-confirm {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .customers-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .customers-toolbar__title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .customers-toolbar .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

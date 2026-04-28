@@ -1,0 +1,103 @@
+.dialog-portal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(1rem, env(safe-area-inset-top, 0px))
+    max(1rem, env(safe-area-inset-right, 0px))
+    max(1rem, env(safe-area-inset-bottom, 0px))
+    max(1rem, env(safe-area-inset-left, 0px));
+  pointer-events: auto;
+}
+
+.dialog-portal__backdrop {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: block;
+  cursor: pointer;
+  background: rgb(33 37 41 / 0.62);
+}
+
+.dialog {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  width: min(28rem, 100%);
+  max-width: calc(100vw - 2rem);
+  max-height: min(90vh, 100vh);
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: transparent;
+  color: var(--color-text);
+  box-shadow: 0 16px 48px rgb(30 74 120 / 0.35);
+  pointer-events: auto;
+}
+
+.dialog__surface {
+  max-height: inherit;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-blue-light) 22%, var(--color-card));
+}
+
+.dialog__title {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--color-navy);
+}
+
+.dialog__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--color-heading);
+  background: transparent;
+  cursor: pointer;
+}
+
+.dialog__close:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-navy) 10%, var(--color-card));
+  color: var(--color-navy);
+}
+
+.dialog__close:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.dialog__body {
+  padding: 1.25rem 1.5rem 0.5rem;
+}
+
+.dialog__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  padding: 1rem 1.5rem 1.25rem;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+}

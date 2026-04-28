@@ -1,0 +1,25 @@
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+.card__title {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--color-heading);
+}
+
+.card__body {
+  display: block;
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1rem;
+    border-radius: var(--radius-md);
+  }
+}

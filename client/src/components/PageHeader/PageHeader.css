@@ -1,0 +1,16 @@
+.page-header {
+  margin-bottom: 0.25rem;
+}
+
+.page-header__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.75rem;
+  color: var(--color-text);
+}
+
+.page-header__desc {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}

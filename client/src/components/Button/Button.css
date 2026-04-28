@@ -1,0 +1,106 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font: inherit;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  line-height: 1.25;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-blue-light);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Same core treatment as the navbar: blue bar, navy edge, white text on hover wash */
+.btn--primary {
+  color: #fff;
+  background: var(--color-blue);
+  border-color: var(--color-navy);
+  box-shadow: var(--shadow-nav);
+}
+
+.btn--primary:hover:not(:disabled) {
+  color: #fff;
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.btn--secondary {
+  color: var(--color-navy);
+  background: var(--color-card);
+  border-color: var(--color-blue);
+  font-weight: 600;
+}
+
+.btn--secondary:hover:not(:disabled) {
+  color: #fff;
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.btn--danger {
+  color: var(--color-red);
+  background: var(--color-card);
+  border-color: color-mix(in srgb, var(--color-red) 32%, var(--color-card));
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-red) 8%, var(--color-card));
+}
+
+/* Navbar-style text link on light surfaces */
+.btn--ghost {
+  color: var(--color-blue);
+  background: transparent;
+  border-color: transparent;
+  font-weight: 500;
+  padding: 0.4rem 0.65rem;
+}
+
+.btn--ghost:hover:not(:disabled) {
+  color: #fff;
+  background: var(--color-navy);
+}
+
+.btn--icon {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  background: var(--color-blue);
+  border-color: var(--color-navy);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-nav);
+}
+
+.btn--icon:hover:not(:disabled) {
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+@media (max-width: 640px) {
+  .btn {
+    min-height: 44px;
+  }
+
+  .btn--danger {
+    min-height: 40px;
+  }
+}

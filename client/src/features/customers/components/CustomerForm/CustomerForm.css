@@ -1,0 +1,33 @@
+.customer-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 28rem;
+}
+
+.customer-form__actions {
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .customer-form {
+    gap: 0.7rem;
+    max-width: none;
+  }
+
+  .customer-form .form-field {
+    gap: 0.28rem;
+  }
+
+  .customer-form .form-field__label {
+    font-size: 0.8125rem;
+  }
+
+  .customer-form .form-field__control input {
+    padding: 0.45rem 0.55rem;
+    font-size: 0.9375rem;
+  }
+
+  .customer-form__actions {
+    margin-top: 0.1rem;
+  }
+}

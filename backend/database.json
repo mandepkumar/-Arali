@@ -1,0 +1,68 @@
+[
+  {
+    "id": "506d198e-0ceb-4d3b-b732-a37d1a03c7c8",
+    "name": "Ananya Iyer",
+    "email": "ananya.iyer@student.arali",
+    "phone": "+91-98765-01003"
+  },
+  {
+    "id": "11316d7f-f6f6-480b-b24c-c9f6fca6220e",
+    "name": "Rohan Kapoor",
+    "email": "rohan.kapoor@student.arali",
+    "phone": "+91-98765-01004"
+  },
+  {
+    "id": "8c5c8c50-4cb5-4f6e-ba33-9316d08fb23d",
+    "name": "Kavya Nair",
+    "email": "kavya.nair@student.arali",
+    "phone": "+91-98765-01005"
+  },
+  {
+    "id": "79e5f22c-f7a4-485f-8c2b-d2ddde57c2fc",
+    "name": "Vikram Singh",
+    "email": "vikram.singh@student.arali",
+    "phone": "+91-98765-01006"
+  },
+  {
+    "id": "eddbb8bf-3709-4bc2-b957-47f2ab14d7b9",
+    "name": "Diya Gupta",
+    "email": "diya.gupta@student.arali",
+    "phone": "+91-98765-01007"
+  },
+  {
+    "id": "d8284194-e686-4a71-a95e-147a4b43c748",
+    "name": "Rahul Joshi",
+    "email": "rahul.joshi@student.arali",
+    "phone": "+91-98765-01008"
+  },
+  {
+    "id": "ef441c71-c9e6-4fab-938a-9c89aef4ac19",
+    "name": "Sneha Reddy",
+    "email": "sneha.reddy@student.arali",
+    "phone": "+91-98765-01009"
+  },
+  {
+    "id": "dce1a5b6-c72b-4c50-964f-113b69e4a708",
+    "name": "Aditya Chakraborty",
+    "email": "aditya.chakraborty@student.arali",
+    "phone": "+91-98765-01010"
+  },
+  {
+    "id": "d0b3d341-ae7a-4a42-b7bc-137060b7fbc5",
+    "name": "Meera Krishnan",
+    "email": "meera.krishnan@student.arali",
+    "phone": "+91-98765-01011"
+  },
+  {
+    "id": "8b403299-4a73-4240-9094-161cc6d19e03",
+    "name": "Karan Verma",
+    "email": "karan.verma@student.arali",
+    "phone": "+91-98765-01012"
+  },
+  {
+    "id": "d7e466a0-b710-4d76-a396-fd95f8541462",
+    "name": "Shruti Desai",
+    "email": "shruti.desai@student.arali",
+    "phone": "+91-98765-01013"
+  }
+]

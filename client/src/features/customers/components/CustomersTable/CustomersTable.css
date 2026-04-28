@@ -1,0 +1,190 @@
+.customers-table-root {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.customers-table-wrap {
+  overflow-x: auto;
+}
+
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background: var(--color-card);
+  border: 1px solid var(--color-navy);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.customers-table th,
+.customers-table td {
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.customers-table tbody td {
+  vertical-align: middle;
+  background: var(--color-card);
+  color: var(--color-text);
+  transition: background 0.15s ease;
+}
+
+/* Header: white bar, labels use navbar palette (blue + navy edge), strong separator into body */
+.customers-table thead {
+  background: #fff;
+  box-shadow: none;
+}
+
+.customers-table thead th {
+  padding: 0.65rem 1.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  color: var(--color-blue);
+  background: #fff;
+  border-bottom: 2px solid var(--color-navy);
+}
+
+.customers-table tbody tr {
+  background: #fff;
+}
+
+/* `td` has its own background — tint cells on row hover so the highlight is visible */
+.customers-table tbody tr:not(.customers-table__filler):hover td {
+  background: color-mix(in srgb, var(--color-blue-light) 42%, #fff);
+}
+
+.customers-table__filler td {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  line-height: 1.25;
+  font-size: 0.9rem;
+  color: transparent;
+  background: #fff;
+  user-select: none;
+  pointer-events: none;
+  min-height: 3.35rem;
+  vertical-align: middle;
+}
+
+.customers-table__email {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.customers-table__phone {
+  white-space: nowrap;
+}
+
+.customers-table__actions {
+  position: relative;
+  z-index: 2;
+  width: 1%;
+  white-space: nowrap;
+}
+
+.customers-table__delete-btn {
+  position: relative;
+  z-index: 1;
+  touch-action: manipulation;
+  min-width: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+}
+
+/* Clicks land on the button, not only the SVG (fixes some mobile WebKit targets). */
+.customers-table__delete-btn svg {
+  display: block;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.customers-table__pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  min-height: 2.75rem;
+  padding-top: 0.25rem;
+  border-top: 1px solid var(--color-navy);
+}
+
+.customers-table__range {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.customers-table__pager {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.customers-table__page {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  min-width: 6.5rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  /* Real table + horizontal scroll (no stacked “card” rows). */
+  .customers-table-wrap {
+    overflow-x: auto;
+    margin: 0 -0.25rem;
+    padding: 0 0.25rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .customers-table {
+    width: max-content;
+    min-width: 100%;
+    font-size: 0.875rem;
+  }
+
+  .customers-table th,
+  .customers-table td {
+    padding: 0.5rem 0.65rem;
+  }
+
+  .customers-table thead th {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+
+  .customers-table__filler td {
+    padding: 0.5rem 0.65rem;
+  }
+
+  .customers-table__pagination {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .customers-table__pager {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .customers-table__pager .btn {
+    min-width: 7rem;
+    flex: 1 1 auto;
+  }
+
+  .customers-table__page {
+    width: 100%;
+    text-align: center;
+    order: -1;
+  }
+}
