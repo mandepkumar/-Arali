@@ -1,8 +1,8 @@
 import express, { type Request, type Response } from "express";
 import cors from "cors";
-import { customersRouter } from "./routes/customers.routes.ts";
-import { errorHandler } from "./middleware/errorHandler.ts";
-import { notFoundHandler } from "./middleware/notFound.ts";
+import { customersRouter } from "./routes/customers.routes.js";
+import { errorHandler } from "./middleware/errorHandler.js";
+import { notFoundHandler } from "./middleware/notFound.js";
 
 export function createApp() {
   const app = express();

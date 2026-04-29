@@ -1,4 +1,4 @@
-import type { ErrorCode } from "../constants/errorCodes.ts";
+import type { ErrorCode } from "../constants/errorCodes.js";
 
 export type FieldErrorDetail = {
   path: string;

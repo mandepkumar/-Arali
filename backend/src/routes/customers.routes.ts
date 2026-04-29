@@ -4,9 +4,9 @@ import {
   deleteCustomerHandler,
   getCustomerHandler,
   listCustomersHandler,
-} from "../controllers/customers.controller.ts";
-import { validateBody } from "../middleware/validateRequest.ts";
-import { createCustomerSchema } from "../validators/customer.schemas.ts";
+} from "../controllers/customers.controller.js";
+import { validateBody } from "../middleware/validateRequest.js";
+import { createCustomerSchema } from "../validators/customer.schemas.js";
 
 export const customersRouter = Router();
 

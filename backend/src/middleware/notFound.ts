@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { ErrorCodes } from "../constants/errorCodes.ts";
+import { ErrorCodes } from "../constants/errorCodes.js";
 
 export function notFoundHandler(_req: Request, res: Response): void {
   res.status(404).json({

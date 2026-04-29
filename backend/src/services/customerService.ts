@@ -1,8 +1,8 @@
-import { ErrorCodes } from "../constants/errorCodes.ts";
-import type { CreateCustomerInput, Customer } from "../types/customer.ts";
-import { isCustomerId, newCustomerId } from "../utils/customerId.ts";
-import { HttpError } from "../utils/httpError.ts";
-import { loadCustomers, saveCustomers } from "./customerStore.ts";
+import { ErrorCodes } from "../constants/errorCodes.js";
+import type { CreateCustomerInput, Customer } from "../types/customer.js";
+import { isCustomerId, newCustomerId } from "../utils/customerId.js";
+import { HttpError } from "../utils/httpError.js";
+import { loadCustomers, saveCustomers } from "./customerStore.js";
 
 function normalizeEmail(email: string): string {
   return email.trim().toLowerCase();

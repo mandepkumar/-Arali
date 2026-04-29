@@ -1,9 +1,9 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import type { Customer } from "../types/customer.ts";
-import { ErrorCodes } from "../constants/errorCodes.ts";
-import { HttpError } from "../utils/httpError.ts";
-import { isCustomerId } from "../utils/customerId.ts";
+import type { Customer } from "../types/customer.js";
+import { ErrorCodes } from "../constants/errorCodes.js";
+import { HttpError } from "../utils/httpError.js";
+import { isCustomerId } from "../utils/customerId.js";
 
 /**
  * DB path: `CUSTOMERS_DB_PATH` when set.

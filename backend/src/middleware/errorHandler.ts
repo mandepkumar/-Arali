@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
-import { ErrorCodes } from "../constants/errorCodes.ts";
-import { HttpError } from "../utils/httpError.ts";
+import { ErrorCodes } from "../constants/errorCodes.js";
+import { HttpError } from "../utils/httpError.js";
 
 export function errorHandler(
   err: unknown,

@@ -4,9 +4,9 @@ import {
   deleteCustomerById,
   getCustomerById,
   listCustomers,
-} from "../services/customerService.ts";
-import type { CreateCustomerInput } from "../types/customer.ts";
-import type { CreateCustomerBody } from "../validators/customer.schemas.ts";
+} from "../services/customerService.js";
+import type { CreateCustomerInput } from "../types/customer.js";
+import type { CreateCustomerBody } from "../validators/customer.schemas.js";
 
 type ValidatedRequest = Request & { validatedBody: CreateCustomerBody };
 

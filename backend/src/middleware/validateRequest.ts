@@ -1,8 +1,8 @@
 import type { NextFunction, Request, Response } from "express";
 import type { ZodSchema } from "zod";
 import { ZodError } from "zod";
-import { ErrorCodes } from "../constants/errorCodes.ts";
-import { HttpError } from "../utils/httpError.ts";
+import { ErrorCodes } from "../constants/errorCodes.js";
+import { HttpError } from "../utils/httpError.js";
 
 export function validateBody<T>(schema: ZodSchema<T>) {
   return (req: Request, res: Response, next: NextFunction) => {
