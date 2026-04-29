@@ -15,8 +15,16 @@ function wantsAsyncAccept(req: Request): boolean {
   return Boolean(prefer?.toLowerCase().includes("respond-async"));
 }
 
-export function listCustomersHandler(_req: Request, res: Response): void {
-  res.status(200).json(listCustomers());
+export function listCustomersHandler(
+  _req: Request,
+  res: Response,
+  next: NextFunction
+): void {
+  try {
+    res.status(200).json(listCustomers());
+  } catch (e) {
+    next(e);
+  }
 }
 
 export function getCustomerHandler(
