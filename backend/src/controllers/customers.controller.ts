@@ -5,6 +5,7 @@ import {
   getCustomerById,
   listCustomers,
 } from "../services/customerService.ts";
+import type { CreateCustomerInput } from "../types/customer.ts";
 import type { CreateCustomerBody } from "../validators/customer.schemas.ts";
 
 type ValidatedRequest = Request & { validatedBody: CreateCustomerBody };
@@ -37,7 +38,7 @@ export function createCustomerHandler(
   next: NextFunction
 ): void {
   try {
-    const body = (req as ValidatedRequest).validatedBody;
+    const body = (req as ValidatedRequest).validatedBody as CreateCustomerInput;
     const customer = createCustomer(body);
     const location = `/customers/${customer.id}`;
     res.setHeader("Location", location);

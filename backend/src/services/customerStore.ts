@@ -1,19 +1,24 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 import type { Customer } from "../types/customer.ts";
 import { ErrorCodes } from "../constants/errorCodes.ts";
 import { HttpError } from "../utils/httpError.ts";
 import { isCustomerId } from "../utils/customerId.ts";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
+/**
+ * DB path: `CUSTOMERS_DB_PATH` when set.
+ * On Vercel (`VERCEL` is set), use `backend/database.json` under the deployment root.
+ * Otherwise `database.json` in cwd — run the API with cwd `backend/` (see `npm run dev` / `npm start`).
+ */
 function getDbPath(): string {
   const fromEnv = process.env.CUSTOMERS_DB_PATH;
   if (fromEnv?.trim()) {
     return path.resolve(fromEnv.trim());
   }
-  return path.join(__dirname, "..", "..", "database.json");
+  if (process.env.VERCEL) {
+    return path.resolve(process.cwd(), "backend", "database.json");
+  }
+  return path.join(process.cwd(), "database.json");
 }
 
 function readRaw(): string {
