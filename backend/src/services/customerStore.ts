@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import type { Customer } from "../types/customer.js";
 import { ErrorCodes } from "../constants/errorCodes.js";
@@ -6,9 +6,9 @@ import { HttpError } from "../utils/httpError.js";
 import { isCustomerId } from "../utils/customerId.js";
 
 /**
- * DB path: `CUSTOMERS_DB_PATH` when set.
- * On Vercel (`VERCEL` is set), use `backend/database.json` under the deployment root.
- * Otherwise `database.json` in cwd — run the API with cwd `backend/` (see `npm run dev` / `npm start`).
+ * On Vercel the deployment filesystem is read-only, so we copy the bundled
+ * seed file to `/tmp/database.json` on first access and read/write there.
+ * Locally, `database.json` lives in cwd (the `backend/` folder).
  */
 function getDbPath(): string {
   const fromEnv = process.env.CUSTOMERS_DB_PATH;
@@ -16,7 +16,16 @@ function getDbPath(): string {
     return path.resolve(fromEnv.trim());
   }
   if (process.env.VERCEL) {
-    return path.resolve(process.cwd(), "backend", "database.json");
+    const tmpDb = "/tmp/database.json";
+    if (!existsSync(tmpDb)) {
+      const seed = path.resolve(process.cwd(), "backend", "database.json");
+      if (existsSync(seed)) {
+        copyFileSync(seed, tmpDb);
+      } else {
+        writeFileSync(tmpDb, "[]\n", "utf8");
+      }
+    }
+    return tmpDb;
   }
   return path.join(process.cwd(), "database.json");
 }
